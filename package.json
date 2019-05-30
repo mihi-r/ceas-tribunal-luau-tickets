@@ -1,0 +1,41 @@
+{
+  "name": "ceas-tribunal-luau-tickets",
+  "description": "A form to allow students and alumni get tickets to a yearly CEAS Tribunal event called Luau.",
+  "homepage": "https://github.com/mihi-r/ceas-tribunal-luau-tickets",
+  "author": {
+    "name": "CEAS Tribunal",
+    "url": "https://tribunal.uc.edu"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "core-js": "3.0.0",
+    "@babel/preset-env": "^7.4.2",
+    "browserslist": "^4.5.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-autoprefixer": "^6.0.0"
+  },
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "dev": "gulp dev"
+  },
+  "types": "typings/index.d.ts",
+  "browserslist": [
+    "> 0.005%"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ]
+  ]
+}

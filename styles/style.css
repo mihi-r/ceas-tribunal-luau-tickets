@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+/* General */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 960px;
+    margin: 0 auto; 
+    min-height: 100vh;
+}
+
+/* Form */
+
+.intro {
+
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: linear-gradient(to top, #ef473a, #cb2d3e), url(images/rhodes.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    padding-bottom: 20px;
+
+}
+
+header {
+    background: #ffffff;
+    width: 100%;
+    height: 90px;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    color: white;
+}
+
+.title {
+    max-width: 960px;
+    margin: 40px auto;
+}
+
+h1 {
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    border-bottom: 6px solid #ffffff59;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #a7a7a7;
+    text-align: center;
+    padding-top: 20px;
+}
+
+header img {
+    float: left;
+    width: 180px;
+    margin: 14px;
+}
+
+p {
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+p {
+    color: white;
+}
+
+p a {
+    text-decoration: none;
+    color: #0074D9;
+    transition: color 0.4s;
+}
+
+p a:hover { 
+    color: #7FDBFF; 
+    cursor: pointer;
+}
+
+p a:active {
+  color: #007BE6;
+}
+
+.intro .intro-info a {
+    color: rgb(253, 243, 214);
+}
+
+.intro .intro-info a:hover { 
+    color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.intro .intro-info a:active {
+    color: rgb(253, 243, 214);
+}
+  
+
+form {
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 960px;
+    margin: 40px auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    background: white;
+}
+
+
+form label {
+    padding: 50px;
+    font-size: 15px;
+    color: #666;
+}
+
+form input[type=text],
+form input[type=number],
+form input[type=email],
+form input[type=time],
+form input[type=file],
+form textarea {
+    width: 90%;
+    padding: 12px 0px;
+    margin: 8px auto;
+    display: block;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    transition: border-bottom 0.1s;
+    font-size: 15px;
+}
+
+form input[type=text].missing,
+form input[type=number].missing,
+form input[type=email].missing,
+form input[type=time].missing,
+form input[type=file].missing,
+form textarea.missing {
+    border-bottom: 2px solid #e00122;
+}
+
+form h3 {
+    width: 90%;
+    padding: 12px 0px 0px 0px;
+    margin: 16px auto 0 auto;
+    display: block;
+    font-size: 15px;
+}
+
+form p {
+    color: black;
+    padding: 10px 50px;
+}
+
+form input[type=text]:focus,
+form input[type=number]:focus,
+form input[type=email]:focus,
+form input[type=time]:focus,
+form input[type=file]:focus {
+    border-bottom: 2px solid rgb(143, 143, 143);
+}
+
+form input[type=text].missing:focus,
+form input[type=number].missing:focus,
+form input[type=email].missing:focus,
+form input[type=time].missing:focus,
+form input[type=file].missing:focus,
+form textarea.missing {
+    border-bottom: 2px solid #8f131f;
+}
+
+form input[type=button] {
+    background-color: #e00122;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.6s, color 0.6s;
+    margin: 20px auto 20px auto;
+    display: block;
+    width: 90%;
+    padding: 10px;
+    -webkit-appearance: none;
+    outline: 0;
+    border: none;
+    border: 2px solid #e00122;
+    border-radius: 4px;
+    color: white;
+}
+
+form input[type=button]:hover {
+    background-color: white;
+    color: #e00122;
+    border: 2px solid #e00122;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    form p {
+        padding: 10px 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background: #3f3f3f;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+footer p {
+    text-align: center;
+    margin: 0 20px;
+    padding-top: 16px;
+    font-size: 14px;
+    color: #cacaca;
+}
+
+footer p:nth-of-type(2) {
+    padding-top: 4px;
+    margin-top: 0;
+    padding-bottom: 16px;
+}
