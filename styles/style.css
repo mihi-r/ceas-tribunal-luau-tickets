@@ -228,6 +228,7 @@ footer {
 footer p {
     text-align: center;
     margin: 0 20px;
+    max-width: unset;
     padding-top: 16px;
     font-size: 14px;
     color: #cacaca;
