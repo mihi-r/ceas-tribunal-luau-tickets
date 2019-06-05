@@ -131,8 +131,10 @@ form label {
 form input[type=text],
 form input[type=number],
 form input[type=email],
+form input[type=date],
 form input[type=time],
 form input[type=file],
+form input[type=image],
 form textarea {
     width: 90%;
     padding: 12px 0px;
