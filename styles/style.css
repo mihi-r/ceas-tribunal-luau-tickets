@@ -187,6 +187,32 @@ form textarea.missing {
     border-bottom: 2px solid #8f131f;
 }
 
+form a {
+    background-color: #01e0bf;
+    text-decoration:none;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 1% 5% auto;
+    display: block;
+    width: 15%;
+    padding: 3px;
+    text-align: center;
+    -webkit-appearance: none;
+    outline: 0;
+    border: none;
+    border: 2px solid #01e0bf;
+    border-radius: 4px;
+    color: white;
+}
+
+form a:hover {
+    background-color: white;
+    color: #01e0bf;
+    border: 2px solid #01e0bf;
+    cursor: pointer;
+}
+
 form input[type=button] {
     background-color: #e00122;
     font-size: 20px;
