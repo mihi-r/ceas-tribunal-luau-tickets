@@ -187,7 +187,7 @@ form textarea.missing {
     border-bottom: 2px solid #8f131f;
 }
 
-.download a {
+form .download a {
     background-color: #01e0bf;
     text-decoration:none;
     font-size: 10px;
@@ -206,7 +206,7 @@ form textarea.missing {
     color: white;
 }
 
-.download a:hover {
+form .download a:hover {
     background-color: white;
     color: #01e0bf;
     border: 2px solid #01e0bf;
