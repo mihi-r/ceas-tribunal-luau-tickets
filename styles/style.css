@@ -123,9 +123,15 @@ form {
 
 
 form label {
-    padding: 50px;
+    width: 90%;
+    padding: 12px 0px 0px 0px;
+    margin: 16px auto 0 auto;
+    display: block;
     font-size: 15px;
-    color: #666;
+}
+
+form label[for=download] {
+    margin-bottom: 6px;
 }
 
 form input[type=text],
@@ -187,17 +193,14 @@ form textarea.missing {
     border-bottom: 2px solid #8f131f;
 }
 
-form .download a {
+form .download {
     background-color: #01e0bf;
     text-decoration:none;
     font-size: 10px;
     text-transform: uppercase;
     transition: background-color 0.3s, color 0.3s;
-    margin: 1% 5% auto;
-    display: block;
-    width: 15%;
-    padding: 3px;
-    text-align: center;
+    padding: 3px 6px;
+    margin: 0 5%;
     -webkit-appearance: none;
     outline: 0;
     border: none;
@@ -206,7 +209,7 @@ form .download a {
     color: white;
 }
 
-form .download a:hover {
+form .download:hover {
     background-color: white;
     color: #01e0bf;
     border: 2px solid #01e0bf;

@@ -22,15 +22,22 @@
                 <p class="intro-info"></p>
                 <form>
                     <input type="text" id="name" name="name" placeholder="Name" autocomplete="off">
+
                     <input type="text" id="phonenumber" name="phonenumber" placeholder="Phone Number (xxx-xxx-xxxx)" autocomplete="off">
+                    
                     <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
-                    <h3>Date of Birth</h3>
+                    
+                    <label for="birthday">Date of Birth</label>
                     <input type="date" id="birthday" maxlength="10" name="birthday" placeholder="(mm/dd/yyyy)" autocomplete="off">
-                    <h3>Venmo Transaction Image</h3>
+                    
+                    <label for="venmoimage">Venmo Transaction Image</label>
+                    
                     <input type="file" id="venmoimage" name="venmoimage" placeholder="Venmo Transaction Image (@CEAS-Tribunal)" autocomplete="off">
-                    <h3>Completed Bus Waiver</h3>
-                    <a class="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
+                    
+                    <label for="download">Completed Bus Waiver</label>
+                    <a class="download" id="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
                     <input type="file" id="buswaiver" name="buswaiver" placeholder="Completed Bus Waiver" autocomplete="off">
+                    
                     <input type="button" value="Submit" id="submitButton">
                 </form>
             </div>

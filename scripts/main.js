@@ -1,3 +1,3 @@
-import displayInfo from './info-view';
+import getInfo from './info-view.js';
 
-const displayView = displayInfo();
+getInfo();
