@@ -31,9 +31,6 @@ Prerequisites:
 2. Make your desired change.
 3. Visit the webpage and clear browser cache (for example, if you're using Chrome, open your developer tools and hold down the refresh icon to see the option to "Empty Cache and Hard Reload:).
 
-To contribute, follow our [Git WorkFlow](https://github.com/mihi-r/ceas-tribunal-luau-tickets/wiki).
-
-We will be using the [Airbnb Style Guide](https://github.com/airbnb/javascript) for our JavaScript and [PSR](https://www.php-fig.org/psr/) for our PHP.
-
+To contribute, follow our [Git WorkFlow](https://github.com/mihi-r/ceas-tribunal-luau-tickets/wiki) and refer to the style guide.
 
 
