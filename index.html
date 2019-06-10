@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A form to allow students and alumni get tickets to a yearly CEAS Tribunal event called Luau.">
     <title>Luau Tickets</title>
-    <link rel="stylesheet" type="text/css" href="build/style.min.css">
+
+    <link rel="stylesheet" type="text/css" href="build/style.css">
 </head>
 <body>
     <div class="intro">
@@ -18,17 +19,15 @@
                 <h1>Luau Tickets</h1>
             </div>
             <div class="selection-intro">
-                <p class="intro-info">Please fill out this form to purchase a ticket for the Engineering Luau that will be hosted on Saturday, July 13th, at the Beach Waterpark. </br> </br> This years theme is "Bicentennial" to celebration 200 Successful Boldly Bearcat years! Engineering Luau starts at 11:30 am and goes until 10:30 pm. </br> </br> Tickets are $25 includes your beach ticket, a Bicentennial Towel, free snacks, free lunch, free bussing to and from the Beach, and alcohol for those 21+ (Option between 3 beers, alcohol will only be served during lunch and during the evening). </br> </br>The only payment method accepted online is Venmo (@CEAS-Tribunal), if you can not pay through Venmo please reach out to our Luau Chair Ahsan Subzwari at subzwasa@mail.uc.edu</a>.
-                </p>
+                <p class="intro-info"></p>
                 <form>
-                    <input type="text" id="name" name="name" placeholder="Name" autocomplete="off">
                     <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number (xxx-xxx-xxxx)" autocomplete="off">
                     <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
-                    <h3>Date of Birth</h3>
+                    <label for="birth-date">Date of Birth</label>
                     <input type="date" id="birth-date" maxlength="10" name="birth-date" placeholder="(mm/dd/yyyy)" autocomplete="off">
-                    <h3>Venmo Transaction Image</h3>
+                    <label for="venmo-image">Venmo Transaction Image</label>
                     <input type="file" id="venmo-image" name="venmo-image" placeholder="Venmo Transaction Image (@CEAS-Tribunal)" autocomplete="off">
-                    <h3>Completed Bus Waiver</h3>
+                    <label for="download">Completed Bus Waiver</label>
                     <a class="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
                     <input type="file" id="bus-waiver" name="bus-waiver" placeholder="Completed Bus Waiver" autocomplete="off">
                     <input type="button" value="Submit" id="submit-button">
@@ -42,6 +41,6 @@
         <p>For any questions or comments, contact us at careerfair@uc.edu.</p>      
     </footer>
 
-    <script src="build/main.min.js" type="text/javascript"></script>
+    <script src="build/main.js" type=module></script>
 </body>
 </html>
