@@ -18,21 +18,25 @@
             <div class="title">
                 <h1>Luau Tickets</h1>
             </div>
-            <div class="selection-intro">
-                <p class="intro-info"></p>
-                <form>
-                    <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number (xxx-xxx-xxxx)" autocomplete="off">
-                    <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
-                    <label for="birth-date">Date of Birth</label>
-                    <input type="date" id="birth-date" maxlength="10" name="birth-date" placeholder="(mm/dd/yyyy)" autocomplete="off">
-                    <label for="venmo-image">Venmo Transaction Image</label>
-                    <input type="file" id="venmo-image" name="venmo-image" placeholder="Venmo Transaction Image (@CEAS-Tribunal)" autocomplete="off">
-                    <label for="download">Completed Bus Waiver</label>
-                    <a class="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
-                    <input type="file" id="bus-waiver" name="bus-waiver" placeholder="Completed Bus Waiver" autocomplete="off">
-                    <input type="button" value="Submit" id="submit-button">
-                </form>
-            </div>
+            <p class="intro-info"></p>
+            <form>
+                <input type="text" id="name" placeholder="Name" autocomplete="off">
+                <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number (xxx-xxx-xxxx)" autocomplete="off">
+                <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
+                <label for="birth-date">Date of Birth</label>
+                <input type="date" id="birth-date" maxlength="10" name="birth-date" placeholder="mm/dd/yyyy" autocomplete="off">
+                <label for="venmo-image">Venmo Transaction Image</label>
+                <p>The ticket will have to be paid through Venmo to confirm your place. Make a payment to @<span class="venmo-recipient"></span>
+                    with the amount $<span class="ticket-price"></span> and include "Luau Ticket" as the title.
+                    Then, attach a screenshot of your completed transaction as a proof of payment.
+                </p>
+                <a class="open-venmo">Open Venmo</a>
+                <input type="file" id="venmo-image" name="venmo-image" accept="image/png, image/jpeg">
+                <label for="download">Completed Bus Waiver</label>
+                <a class="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
+                <input type="file" id="bus-waiver" name="bus-waiver" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf">
+                <input type="button" value="Submit" id="submit-button">
+            </form>
         </div>
     </div>
 

@@ -25,7 +25,7 @@ body {
 .intro {
 
     background: #cb2d3e;  /* fallback for old browsers */
-    background: linear-gradient(to top, #ef473a, #cb2d3e), url(images/rhodes.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, #ef473a, #cb2d3e), url(../images/thebeach.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;
@@ -173,7 +173,10 @@ form h3 {
 
 form p {
     color: black;
-    padding: 10px 50px;
+    width: 90%;
+    padding: 12px 0px 0px 0px;
+    margin: 0 auto 4px auto;
+    font-size: 14px;
 }
 
 form input[type=text]:focus,
@@ -193,6 +196,7 @@ form textarea.missing {
     border-bottom: 2px solid #8f131f;
 }
 
+form .open-venmo,
 form .download {
     background-color: #01e0bf;
     text-decoration:none;
@@ -209,11 +213,22 @@ form .download {
     color: white;
 }
 
+form .open-venmo {
+    background-color: #40c4ff;
+    border: 2px solid #40c4ff;
+}
+
+form .open-venmo:hover,
 form .download:hover {
     background-color: white;
     color: #01e0bf;
     border: 2px solid #01e0bf;
     cursor: pointer;
+}
+
+form .open-venmo:hover {
+    color: #40c4ff;
+    border: 2px solid #40c4ff;
 }
 
 form input[type=button] {
