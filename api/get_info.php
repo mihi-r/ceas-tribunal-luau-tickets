@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(-1);
 
 set_include_path("./includes/");
@@ -25,5 +24,4 @@ if ($result) {
 echo json_encode($resultData);
 
 mysqli_close($mysqli);
-exit();
 ?>
