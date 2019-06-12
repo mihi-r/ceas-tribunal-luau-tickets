@@ -16,13 +16,12 @@ body {
 .container {
     padding: 0 20px;
     max-width: 960px;
-    margin: 0 auto; 
-    min-height: 100vh;
+    margin: 0 auto;
 }
 
 /* Form */
 .intro {
-
+    min-height: 100vh;
     background: #cb2d3e;  /* fallback for old browsers */
     background: linear-gradient(to top, #ef473a, #cb2d3e), url(../images/thebeach.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
@@ -118,6 +117,7 @@ form {
     margin: 40px auto;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
     background: white;
+    position: relative;
 }
 
 
@@ -260,6 +260,35 @@ form input[type=button]:hover {
     }
 }
 
+/* Ticket reserved */
+.reserved-ticket {
+    display: none;
+}
+
+.reserved-ticket .reserved-box {
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 960px;
+    margin: 40px auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    background: white;
+    position: relative;
+}
+
+.reserved-ticket .reserved-box p {
+    color: black;
+    width: 90%;
+    padding: 12px 0px 0px 0px;
+    margin: 0 auto 4px auto;
+    text-align: center;
+}
+
+.reserved-ticket .reserved-box .success-emoji {
+    font-size: 80px;
+    text-align: center;
+    padding: 0;
+}
+
 /* Footer */
 footer {
     background: #3f3f3f;
@@ -281,4 +310,109 @@ footer p:nth-of-type(2) {
     padding-top: 4px;
     margin-top: 0;
     padding-bottom: 16px;
+}
+
+/* Warnings */
+.warning {
+    position: absolute;
+    background: #1e88e5;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    font-size: 14px;
+    padding: 0px 16px;
+    max-width: 400px;
+    border-radius: 8px;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.warning.missing-fields {
+    left: 50%;
+    margin-top: 100px;
+}
+
+.warning p {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    color: white;
+}
+
+.warning .close {
+    font-size: 20px;
+    padding-top: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.warning .close:hover {
+    color: #80d8ff;
+}
+
+/* Loading symbol from loading.io */
+.lds-ellipsis {
+    display: none;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgb(61, 61, 61);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
 }
