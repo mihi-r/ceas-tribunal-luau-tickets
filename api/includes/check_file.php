@@ -20,21 +20,21 @@ function checkFile($file, $mb_size_limit, $expected_mime_types) {
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
-            $file_check_result->$file_safe = false;
+            $file_check_result->file_safe = false;
             $file_check_result->message = 'No file sent.';
         case UPLOAD_ERR_INI_SIZE:
         case UPLOAD_ERR_FORM_SIZE:
-            $file_check_result->$file_safe = false;
+            $file_check_result->file_safe = false;
             $file_check_result->message = 'Exceeded resume filesize limit of ' . $mb_size_limit . "MB.";
         default:
-            $file_check_result->$file_safe = false;
+            $file_check_result->file_safe = false;
             $file_check_result->message = 'Unknown errors. Try registering again. If the problem persists, select a different resume file or contact the number in the description.';
     }
     
     // Check file size
     $b_size_limit = (2**20) * $mb_size_limit;
     if ($file['size'] > $b_size_limit) {
-        $file_check_result->$file_safe = false;
+        $file_check_result->file_safe = false;
         $file_check_result->message = 'Exceeded resume filesize limit of' . $mb_size_limit . "MB.";
     }
     
@@ -42,7 +42,7 @@ function checkFile($file, $mb_size_limit, $expected_mime_types) {
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     $ext = array_search($finfo->file($file['tmp_name']), $expected_mime_types, true);
     if ($ext === false) {
-        $file_check_result->$file_safe = false;
+        $file_check_result->file_safe = false;
 
         $file_types = array_keys($expected_mime_types);
         $file_types_str = "";
@@ -54,7 +54,7 @@ function checkFile($file, $mb_size_limit, $expected_mime_types) {
 
         $file_types_str = substr($file_types_str, 0, -2);
 
-        $file_check_result->message = 'Invalid resume file format. Please only use ' . $file_types_str . 'format(s).';
+        $file_check_result->message = $file['name'] . ' is an invalid file format. Please only use ' . $file_types_str . ' format(s).';
     }
 
     return $file_check_result;

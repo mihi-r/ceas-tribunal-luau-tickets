@@ -11,7 +11,7 @@ CREATE TABLE `luau_tickets_reserved` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `phone` int(7) NOT NULL,
+  `phone` varchar(12) NOT NULL,
   `date_of_birth` varchar(10) NOT NULL,
   `date_submitted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
