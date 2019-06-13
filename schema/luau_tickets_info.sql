@@ -13,6 +13,7 @@ CREATE TABLE `luau_tickets_info` (
   `venmo_recipient` varchar(128) NOT NULL,
   `admin_name` varchar(128) NOT NULL,
   `admin_email` varchar(128) NOT NULL,
+  `super_email` varchar(128) NOT NULL,
   `price` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
