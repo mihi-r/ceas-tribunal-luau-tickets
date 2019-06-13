@@ -7,6 +7,7 @@
     <title>Luau Tickets</title>
 
     <link rel="stylesheet" type="text/css" href="build/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 </head>
 <body>
     <div class="intro">
@@ -31,10 +32,16 @@
                     Then, attach a screenshot of your completed transaction as a proof of payment.
                 </p>
                 <a class="open-venmo">Open Venmo</a>
-                <input type="file" id="venmo-image" name="venmo-image" accept="image/png, image/jpeg">
+                <label class="file-upload">
+                    <input type="file" id="venmo-image" name="venmo-image" accept="image/png, image/jpeg">
+                    <i class="fas fa-file-upload"></i> Click to Upload
+                </label>
                 <label for="download">Completed Bus Waiver</label>
                 <a class="download" href="./documents/BusWaiver.docx">Download Bus Waiver</a>
-                <input type="file" id="bus-waiver" name="bus-waiver" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf">
+                <label class="file-upload">
+                    <input type="file" id="bus-waiver" name="bus-waiver" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf">
+                    <i class="fas fa-file-upload"></i> Click to Upload
+                </label>
                 <input type="button" value="Submit" id="submit-button">
             </form>
         </div>

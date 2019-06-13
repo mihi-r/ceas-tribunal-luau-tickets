@@ -255,6 +255,34 @@ form input[type=button]:hover {
     cursor: pointer;
 }
 
+form input[type=file] {
+    display: none;
+}
+
+.file-upload {
+    border: 2px solid #e00122;
+    display: block;
+    padding:  6px 12px;
+    cursor: pointer;
+    width: 15%;
+    text-align: center;
+    background-color: #e00122;
+    margin: 2% 5% 0;
+    text-transform: uppercase;
+    transition: background-color 0.6s, colors 0.6s;
+    -webkit-appearance: none;
+    outline: 0;
+    border-radius: 4px;
+    color: white
+}
+
+.file-upload:hover {
+    background-color: white;
+    color: #e00122;
+    border: 2px solid #e00122;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
     form p {
         padding: 10px 20px;
