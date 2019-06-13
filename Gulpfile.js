@@ -2,6 +2,9 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const rollup = require('gulp-rollup');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 
 function styles() {
   return gulp
@@ -21,6 +24,10 @@ function devStyles() {
 function scripts() {
   return gulp
     .src('./scripts/*.js')
+    .pipe(rollup({
+      input: './scripts/main.js',
+      format: 'cjs',
+    }))
     .pipe(babel({
       presets: [
         ['@babel/preset-env', {
@@ -30,13 +37,28 @@ function scripts() {
       ],
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('./build/'));
+    .pipe(rename('main.min.js'))
+    .pipe(gulp.dest('./build'));
 }
 
-function devScripts() {
+function templates() {
   return gulp
-    .src('./scripts/*.js')
-    .pipe(gulp.dest('./build/'));
+    .src('index.html')
+    .pipe(replace(
+      '<script src="scripts/main.js" type=module></script>',
+      '<script src="build/main.min.js"></script>',
+    ))
+    .pipe(gulp.dest('.'));
+}
+
+function devTemplates() {
+  return gulp
+    .src('index.html')
+    .pipe(replace(
+      '<script src="build/main.min.js"></script>',
+      '<script src="scripts/main.js" type=module></script>',
+    ))
+    .pipe(gulp.dest('.'));
 }
 
 function watchFiles() {
@@ -45,12 +67,11 @@ function watchFiles() {
 }
 
 function watchFilesDev() {
-  gulp.watch('./scripts/*.js', gulp.series(devScripts));
   gulp.watch('./styles/*.css', gulp.series(devStyles));
 }
 
-const watch = gulp.parallel(scripts, styles, watchFiles);
-const dev = gulp.parallel(devScripts, devStyles, watchFilesDev);
+const watch = gulp.parallel(scripts, styles, templates, watchFiles);
+const dev = gulp.parallel(devStyles, devTemplates, watchFilesDev);
 
 exports.watch = watch;
 exports.dev = dev;
