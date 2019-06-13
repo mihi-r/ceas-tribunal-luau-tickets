@@ -6,22 +6,29 @@
     "name": "CEAS Tribunal",
     "url": "https://tribunal.uc.edu"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mihi-r/ceas-tribunal-luau-tickets"
+  },
   "dependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "npm": "^6.1.0",
-    "gulp": "^4.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-babel": "^8.0.0"
+    "npm": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "core-js": "3.0.0",
     "@babel/preset-env": "^7.4.2",
-    "browserslist": "^4.5.2"
+    "browserslist": "^4.5.2",
+    "core-js": "3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-rollup": "^2.16.2",
+    "gulp-uglify": "^3.0.2"
   },
   "scripts": {
     "build": "gulp",
