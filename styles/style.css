@@ -51,7 +51,7 @@ h1 {
   padding: 10px 0;
   font: 300 50px "Open Sans",sans-serif;
   color: #fff;
-  border-bottom: 6px solid #fff;
+  border-bottom: 6px solid rgba(255, 255, 255, 0.349);
 }
 
 h2 {
@@ -174,7 +174,7 @@ form input[type=number]:focus,
 form input[type=email]:focus,
 form input[type=time]:focus,
 form input[type=file]:focus {
-  border-bottom: #8f8f8f;
+  border-bottom: 2px solid #8f8f8f;
 }
 
 form input[type=text].missing:focus,
@@ -244,30 +244,26 @@ form input[type=button]:hover {
 }
 
 form input[type=file] {
-  display: none;
+  visibility: hidden;
+  position: absolute;
 }
 
-.file-upload {
+form .file-upload {
   border: 2px solid #e00122;
   display: block;
-  padding: 6px 12px;
+  padding: 6px 0;
   cursor: pointer;
-  width: 15%;
   text-align: center;
-  background-color: #e00122;
-  margin: 2% 5% 0;
+  margin: 20px auto 4px;
+  width: 90%;
   text-transform: uppercase;
   transition: background-color 0.6s, colors 0.6s;
-  -webkit-appearance: none;
-  outline: 0;
   border-radius: 4px;
-  color: #fff;
+  color: #e00122;
 }
 
-.file-upload:hover {
-  background-color: #fff;
-  color: #e00122;
-  border: 2px solid #e00122;
+form .file-upload:hover {
+  background-color: #ffe9ed;
   cursor: pointer;
 }
 
