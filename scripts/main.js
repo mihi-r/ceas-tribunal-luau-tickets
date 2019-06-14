@@ -36,8 +36,31 @@ const formEmail = document.querySelector('.intro #email');
 const formDateOfBirth = document.querySelector('.intro #birth-date');
 const formTransactionImage = document.querySelector('.intro #venmo-image');
 const formBusWaiver = document.querySelector('.intro #bus-waiver');
+const formBusWaiverText = document.querySelector('.intro .file-text-wavier ');
+const formTransactionText = document.querySelector('.intro .file-text-venmo');
 const formSubmitButton = document.querySelector('.intro #submit-button');
 
+/**
+ * Changes the text of the file upload to the name of the file
+ */
+formBusWaiver.onchange = function formBusWaiverOnChange() {
+  let fileName = '';
+  fileName = this.files[0].name;
+  formBusWaiverText.textContent = fileName;
+};
+
+/**
+ * Changes the text of the file upload to the name of the file
+ */
+formTransactionImage.onchange = function formTransactionImageOnChange() {
+  let fileName = '';
+  fileName = this.files[0].name;
+  formTransactionText.textContent = fileName;
+};
+
+/**
+ * Submit form when submit button is clicked
+ */
 formSubmitButton.onclick = function formSubmitButtonOnclick() {
   reserveTicket(
     formName,
