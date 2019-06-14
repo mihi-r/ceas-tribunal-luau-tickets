@@ -10,6 +10,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `luau_tickets_info` (
   `id` int(11) NOT NULL,
   `description` text NOT NULL,
+  `event_date` varchar(10) NOT NULL,
   `venmo_recipient` varchar(128) NOT NULL,
   `admin_name` varchar(128) NOT NULL,
   `admin_email` varchar(128) NOT NULL,
