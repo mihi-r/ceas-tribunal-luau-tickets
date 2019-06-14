@@ -163,14 +163,14 @@ if (!$result) {
 $mail = new PHPMailer(true);
 
 try {
-    $mail->Subject = 'Luau Tickets Reserved';
+    $mail->Subject = "Luau Tickets Reserved";
 
-    $email_msg = 'Hello ' . $name . ', \n \n';
-    $email_msg .= 'This email is to confirm we have recieved your request to reserve Luau tickets.';
-    $email_msg .= 'Your transaction image will be evaluated and if we require any further information, we will contact you. \n \n';
-    $email_msg .= 'If you have any questions, feel free to reply back to this email. Otherwise, mark your calendar and we ';
-    $email_msg .= 'look forward to seeing you there! \n \n';
-    $email_msg .= 'Best regards, \n';
+    $email_msg = "Hello " . $name . ", \n \n";
+    $email_msg .= "This email is to confirm we have recieved your request to reserve a Luau ticket. ";
+    $email_msg .= "Your transaction image will be evaluated and if we require any further information, we will contact you. \n \n";
+    $email_msg .= "If you have any questions, feel free to reply back to this email. Otherwise, mark your calendar and we ";
+    $email_msg .= "look forward to seeing you there! \n \n";
+    $email_msg .= "Best regards, \n";
     $email_msg .= $admin_name;
 
     $mail->Body = $email_msg;
@@ -184,36 +184,36 @@ try {
 }
 
 // Email admin
-$mail = new PHPMailer(true);
+$mail_admin = new PHPMailer(true);
 
 try {
-    $mail->Subject = 'Luau Tickets - Reservation Created';
+    $mail_admin->Subject = "Luau Tickets - Reservation Created";
 
-    $email_msg = 'Hello ' . $admin_name . ', \n \n';
-    $email_msg .= 'A reservation has been created with the following information: \n';
-    $email_msg .= 'Name: ' . $name . ' \n';
-    $email_msg .= 'Phone: ' . $phone . ' \n';
-    $email_msg .= 'Email: ' . $email . ' \n';
-    $email_msg .= 'Date of birth: ' . $date_of_birth . ' \n \n';
-    $email_msg .= 'The transaction image and the bus waiver is attached to this email.';
-    $email_msg .= 'Please review these files to ensure that they have paid the correct amount and have completed the waiver.';
-    $email_msg .= 'Best regards, \n';
+    $email_msg = "Hello " . $admin_name . ", \n \n";
+    $email_msg .= "A reservation has been created with the following information: \n";
+    $email_msg .= "Name: " . $name . " \n";
+    $email_msg .= "Phone: " . $phone . " \n";
+    $email_msg .= "Email: " . $email . " \n";
+    $email_msg .= "Date of birth: " . $date_of_birth . " \n \n";
+    $email_msg .= "The transaction image and the bus waiver is attached to this email. ";
+    $email_msg .= "Please review these files to ensure that they have paid the correct amount and have completed the waiver. \n \n";
+    $email_msg .= "Best regards, \n";
     $email_msg .= $super_email;
 
-    $mail->Body = $email_msg;
-    $mail->setFrom($super_email);
-    $mail->addAddress($admin_email, $admin_name);
+    $mail_admin->Body = $email_msg;
+    $mail_admin->setFrom($super_email);
+    $mail_admin->addAddress($admin_email, $admin_name);
 
     // Attach files
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
     $mime = finfo_file($finfo, $bus_wavier['tmp_name']);
-    $mail->AddAttachment($bus_wavier['tmp_name'], $bus_wavier['name'], 'base64', $mime);
+    $mail_admin->AddAttachment($bus_wavier['tmp_name'], $bus_wavier['name'], 'base64', $mime);
 
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
     $mime = finfo_file($finfo, $transaction_image['tmp_name']);
-    $mail->AddAttachment($transaction_image['tmp_name'], $transaction_image['name'], 'base64', $mime);
+    $mail_admin->AddAttachment($transaction_image['tmp_name'], $transaction_image['name'], 'base64', $mime);
 
-    $mail->send();
+    $mail_admin->send();
 } catch (Exception $e) {
     $result_data->message = 'Error occurred while sending the admin the confirmation email. Please email the admin in the description notifying of this error.';
     echo json_encode($result_data);
