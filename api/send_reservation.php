@@ -96,8 +96,9 @@ if(!preg_match('/^(((0)[0-9])|((1)[0-2]))(\/)([0-2][0-9]|(3)[0-1])(\/)\d{4}$/', 
 $admin_name = '';
 $admin_email = '';
 $super_email = '';
+$event_date = '';
 
-$sql = 'SELECT admin_name, admin_email, super_email FROM luau_tickets_info';
+$sql = 'SELECT admin_name, admin_email, super_email, event_date FROM luau_tickets_info';
 $result = $mysqli->query($sql);
 
 if ($result) {
@@ -105,12 +106,42 @@ if ($result) {
         $admin_name = $row['admin_name'];
         $admin_email = $row['admin_email'];
         $super_email = $row['super_email'];
+        $event_date = $row['event_date'];
     }
 }
 
-if ($admin_email === '' || $admin_name === '' || $super_email === '') {
+if ($admin_email === '' || $admin_name === '' || $super_email === '' || $event_date === '') {
     $result_data->message = 'Error occurred while retrieving admin information. Please try again. '
         . 'If the error persists, email the admin in the description.';
+    echo json_encode($result_data);
+    die();
+}
+
+$event_year = substr($event_date, 6, 4);
+$birth_year = substr($date_of_birth, 6, 4);
+
+$is_too_young = false;
+
+if ($event_year - $birth_year < 18) {
+    $is_too_young = true;
+} else if ($event_year - $birth_year == 18) {
+    $event_month = substr($event_date, 3, 2);
+    $birth_month = substr($date_of_birth, 3, 2);
+    
+    if ($event_month - $birth_month < 0) {
+        $is_too_young = true;
+    } else if ($event_month - $birth_month == 0) {
+        $event_date = substr($event_date, 0, 2);
+        $birth_date = substr($date_of_birth, 0, 2);
+        
+        if ($event_date - $birth_date < 0) {
+            $is_too_young = true;
+        }
+    }
+}
+
+if ($is_too_young) {
+    $result_data->message = "Reservation denied. You must be 18 or older by the event date to reserve a ticket.";
     echo json_encode($result_data);
     die();
 }
