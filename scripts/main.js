@@ -52,7 +52,7 @@ formBusWaiver.onchange = function formBusWaiverOnChange() {
 /**
  * Changes the text of the file upload to the name of the file
  */
-formTransactionImage.onchange = function formBusWaiverOnChange() {
+formTransactionImage.onchange = function formTransactionImageOnChange() {
   let fileName = '';
   fileName = this.files[0].name;
   formTransactionText.textContent = fileName;
