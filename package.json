@@ -25,6 +25,7 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-css-purge": "^3.0.9",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-rollup": "^2.16.2",
@@ -38,7 +39,7 @@
   },
   "types": "typings/index.d.ts",
   "browserslist": [
-    "> 0.005%"
+    "> 0.1%"
   ],
   "presets": [
     [
