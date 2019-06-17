@@ -1,3 +1,5 @@
+import displayWarning from './warning-view.js';
+
 /**
  * Displays information about the Venmo transaction and generates the Venmo deep link.
  * @param {int} price - The price of the ticket to display.
@@ -53,12 +55,10 @@ export default function getInfo() {
           mostRecentData.venmo_recipient,
         );
       } else {
-        // TODO: Remove this console.error and add a warning to the user
-        console.error('error');
+        displayWarning('Something went wrong while retrieving information. Please refresh the page. If the error persists, check your network connection.');
       }
     })
-    .catch((error) => {
-      // TODO: Remove this console.error and add a warning to the user
-      console.error(error);
+    .catch(() => {
+      displayWarning('Something went wrong while retrieving information. Please refresh the page. If the error persists, check your network connection.');
     });
 }

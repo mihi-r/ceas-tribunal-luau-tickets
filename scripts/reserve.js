@@ -1,35 +1,10 @@
-const displayWarning = function displayWarningMessage(msg) {
-  const containerForm = document.querySelector('.container form');
+import displayWarning from './warning-view.js';
 
-  const warningDiv = document.createElement('div');
-  const warningCloseDiv = document.createElement('div');
-  const warningPara = document.createElement('p');
-  const warningCloseIcon = document.createElement('i');
-
-  warningDiv.classList.add('warning');
-  warningCloseDiv.classList.add('close');
-  warningCloseIcon.classList.add('far');
-  warningCloseIcon.classList.add('fa-times-circle');
-
-  warningPara.textContent = msg;
-
-  warningCloseDiv.appendChild(warningCloseIcon);
-  warningDiv.appendChild(warningCloseDiv);
-  warningDiv.appendChild(warningPara);
-  containerForm.appendChild(warningDiv);
-
-  setTimeout(() => {
-    warningDiv.style.opacity = '1';
-  }, 300);
-
-  warningCloseDiv.onclick = function warningCloseOnclick() {
-    warningDiv.style.opacity = '0';
-    setTimeout(() => {
-      warningDiv.remove();
-    }, 300);
-  };
-};
-
+/**
+ * Checks if a field is missing and highlights the field is so.
+ * @param {Element} field - The field to check.
+ * @returns {boolean} If the field is missing.
+ */
 const checkField = function checkForMissingField(field) {
   let isFieldMissing = false;
 
@@ -43,6 +18,11 @@ const checkField = function checkForMissingField(field) {
   return isFieldMissing;
 };
 
+/**
+ * Checks if a file field is missing a file and highlights the field is so.
+ * @param {Element} fileField - The field to check.
+ * @returns {boolean} If the file field is missing.
+ */
 const checkFile = function checkFileMissing(fileField) {
   let isFileMissing = false;
 
@@ -56,6 +36,16 @@ const checkFile = function checkFileMissing(fileField) {
   return isFileMissing;
 };
 
+/**
+ * Validates data by checking for missing fields.
+ * @param {Element} name - The name field to validate.
+ * @param {Element} email - The email field to validate.
+ * @param {Element} phone - The phone field to validate.
+ * @param {Element} dateOfBirth - The date of birth field to validate.
+ * @param {Element} transactionImage - The transaction image field to validate.
+ * @param {Element} busWavier - The bus wavier field to validate.
+ * @returns {boolean} If any of the fields are missing.
+ */
 const validateData = function validateDataForMissingValues(
   name, email, phone, dateOfBirth, transactionImage, busWavier,
 ) {
@@ -77,6 +67,15 @@ const validateData = function validateDataForMissingValues(
   return isFieldMissing;
 };
 
+/**
+ * Sends the form information to the backend through a POST call.
+ * @param {Element} name - The name field to send.
+ * @param {Element} email - The email field to send.
+ * @param {Element} phone - The phone field to send.
+ * @param {Element} dateOfBirth - The date of birth field to send.
+ * @param {Element} transactionImage - The transaction image field to send.
+ * @param {Element} busWavier - The bus wavier field to send.
+ */
 const sendReservation = function sendReservationData(
   name, email, phone, dateOfBirth, transactionImage, busWavier,
 ) {
@@ -123,6 +122,15 @@ const sendReservation = function sendReservationData(
     });
 };
 
+/**
+ * Validates and sends form data.
+ * @param {Element} name - The name field to validate and send.
+ * @param {Element} email - The email field to validate and send.
+ * @param {Element} phone - The phone field to validate and send.
+ * @param {Element} dateOfBirth - The date of birth field to validate and send.
+ * @param {Element} transactionImage - The transaction image field to validate and send.
+ * @param {Element} busWavier - The bus wavier field to validate and send.
+ */
 export default function reserveTicket(
   name, email, phone, dateOfBirth, transactionImage, busWavier,
 ) {
