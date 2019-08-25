@@ -60,7 +60,7 @@ For production, you will need to provide the missing constants and update the da
 ### Making changes
 1. Make your desired change.
 2. Make sure to either run `gulp dev` or `gulp watch`.
-3. Visit the webpage and clear browser cache (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd>).
+3. Visit the webpage and clear browser cache (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd>).
 
 To contribute, follow our [Git WorkFlow](https://github.com/mihi-r/ceas-tribunal-luau-tickets/wiki) and refer to the style guides.
 
