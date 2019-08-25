@@ -58,9 +58,9 @@ For production, you will need to provide the missing constants and update the da
 13. To see the webpage, click on "Open WebStart page" from the MAMP Server and click on "My Website".
 
 ### Making changes
-2. Make your desired change.
-1. Make sure to either run `gulp dev` or `gulp watch`.
-3. Visit the webpage and clear browser cache (for example, if you're using Chrome, open your developer tools and hold down the refresh icon to see the option to "Empty Cache and Hard Reload").
+1. Make your desired change.
+2. Make sure to either run `gulp dev` or `gulp watch`.
+3. Visit the webpage and clear browser cache (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd>).
 
 To contribute, follow our [Git WorkFlow](https://github.com/mihi-r/ceas-tribunal-luau-tickets/wiki) and refer to the style guides.
 
