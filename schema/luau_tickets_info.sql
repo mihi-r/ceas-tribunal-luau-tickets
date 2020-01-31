@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 31, 2020 at 12:12 AM
+-- Generation Time: Jan 31, 2020 at 12:23 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -41,13 +41,6 @@ CREATE TABLE `luau_tickets_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `luau_tickets_info`
---
-
-INSERT INTO `luau_tickets_info` (`id`, `description`, `event_date`, `venmo_recipient`, `admin_name`, `admin_email`, `super_email`, `price`, `luau_open`) VALUES
-(1, 'So I can see something', '1/23/2020', 'CEASTribunal', 'admin', 'admin@admin.com', 'admin@admin.com', 20, 0);
-
---
 -- Indexes for dumped tables
 --
 
@@ -65,7 +58,7 @@ ALTER TABLE `luau_tickets_info`
 -- AUTO_INCREMENT for table `luau_tickets_info`
 --
 ALTER TABLE `luau_tickets_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
