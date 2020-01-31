@@ -30,7 +30,15 @@ const generateVenmoInfo = function generateVenmoInfoForView(price, venmoRecipien
  * @param {int} price - The price of the ticket to display.
  * @param {string} venmoRecipient - The reciepient of the venmo transaction to display.
  */
-const displayInfo = function displayInfoForView(description, price, venmoRecipient) {
+const displayInfo = function displayInfoForView(description, price, venmoRecipient, isLuauOpen) {
+  console.log(isLuauOpen);
+  if (isLuauOpen) {
+    const luauForm = document.querySelector('.luau-form');
+    luauForm.style.display = 'block';
+  } else {
+    const luauClosed = document.querySelector('.luau-closed');
+    luauClosed.style.display = 'block';
+  }
   const descriptionDiv = document.querySelector('.intro .intro-info');
   descriptionDiv.textContent = description;
 
@@ -53,6 +61,7 @@ export default function getInfo() {
           mostRecentData.description,
           mostRecentData.price,
           mostRecentData.venmo_recipient,
+          Boolean(Number(mostRecentData.luau_open)),
         );
       } else {
         displayWarning('Something went wrong while retrieving information. Please refresh the page. If the error persists, check your network connection.');
