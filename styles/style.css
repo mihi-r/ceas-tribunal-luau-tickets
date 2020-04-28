@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 /* General */
-
 html {
   scroll-behavior: smooth;
 }
@@ -273,6 +272,31 @@ form .file-upload .file-text {
   form p {
     padding: 10px 20px;
   }
+}
+
+.luau-form {
+  display: none;
+}
+
+/* Form Closed */
+
+.luau-closed {
+  display: none;
+}
+
+.luau-closed-box{
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 960px;
+  margin: 40px auto;
+  box-shadow: rgba(0,0,0,0.2) 0px 4px 8px 0px;
+  background: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.luau-closed-text {
+  color: #000;
 }
 
 /* Ticket reserved */
